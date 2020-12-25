@@ -114,24 +114,24 @@ export default {
   height: 300px;
   border-radius: 4px;
   background-color: #fff;
-}
-.avator_box {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10px;
-  width: 130px;
-  height: 130px;
-  border: 1px solid #eee;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #ddd;
-  background-color: #fff;
-}
-.avator_box img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: #eee;
+  .avator_box {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    width: 130px;
+    height: 130px;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ddd;
+    background-color: #fff;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: #eee;
+    }
+  }
 }
 .login_form {
   position: absolute;
