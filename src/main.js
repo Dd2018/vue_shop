@@ -14,17 +14,32 @@ import TreeTable from 'vue-table-with-tree-grid'
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
 // axios.defaults.baseURL = 'https://www.liulongbin.top:8888/api/private/v1/'
 axios.interceptors.request.use(config => {
-    // console.log(config)
-    config.headers.Authorization = window.sessionStorage.getItem('token')
-    // 在最后必须 return config
-    return config
+  // console.log(config)
+  config.headers.Authorization = window.sessionStorage.getItem('token')
+  // 在最后必须 return config
+  return config
 })
 
 Vue.prototype.$http = axios
 Vue.config.productionTip = false
+
+// 时间过滤器
+Vue.filter('dataFormat', function (originValue) {
+  const newDate = new Date(originValue)
+
+  const year = newDate.getFullYear()
+  // 不足两位在前面补零
+  const month = (newDate.getMonth() + 1 + ' ').padStart(2, '0')
+  const day = (newDate.getDay() + ' ').padStart(2, '0')
+  const hour = (newDate.getHours() + ' ').padStart(2, '0')
+  const minute = (newDate.getMinutes() + ' ').padStart(2, '0')
+  const second = (newDate.getSeconds() + ' ').padStart(2, '0')
+  return `${year}-${month}-${day} ${hour}:${minute}:${second}`
+})
+
 // 注册
-Vue.component('tree-table',TreeTable)
+Vue.component('tree-table', TreeTable)
 new Vue({
-    router,
-    render: h => h(App)
+  router,
+  render: h => h(App)
 }).$mount('#app')

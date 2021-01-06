@@ -26,4 +26,12 @@ body,
 
 .el-cascader-menu {
     height: 300px;
-  }
+}
+
+/* 进度条 */
+.el-steps {
+    margin: 15px 0;
+}
+.el-step__title{
+    font-size: 12px;
+}
