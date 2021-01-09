@@ -60,8 +60,6 @@ export default {
       addGoodsFormRules: {},
     }
   },
-  created() {},
-  methods: {},
 }
 </script>
 
